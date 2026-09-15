@@ -2,6 +2,7 @@ import ClassCard from "../../components/ClassCard/ClassCard"
 import { useState, useEffect } from "react"
 import { useAuth } from "../../context/AuthContext"
 import './Catalog.scss'
+import { API_URL } from '../../config/api'
 
 const Catalog =()=>{
     const { token, isAuthenticated } = useAuth()
@@ -33,7 +34,7 @@ const Catalog =()=>{
 
         const loadClasses = async()=>{
             try {
-                const response = await fetch('/api/classes',{
+                const response = await fetch(`${API_URL}/api/classes`,{
                     signal:controller.signal,
                 })
                 if(!response.ok){
@@ -66,7 +67,7 @@ const Catalog =()=>{
 
         const loadCompletedClasses = async()=>{
             try {
-                const response = await fetch('/api/workouts/me',{
+                const response = await fetch(`${API_URL}/api/workouts/me`,{
                     headers:{
                         Authorization: `Bearer ${token}`
                     },

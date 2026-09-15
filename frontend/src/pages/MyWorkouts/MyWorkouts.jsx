@@ -1,3 +1,4 @@
+import { API_URL } from '../../config/api'
 ﻿import { useEffect, useState } from 'react'
 import { Link, Navigate } from 'react-router'
 import { useAuth } from '../../context/AuthContext'
@@ -20,7 +21,7 @@ const MyWorkouts = () => {
 
     const loadData = async () => {
       try {
-        const response = await fetch(isTrainer ? '/api/classes' : '/api/workouts/me', {
+        const response = await fetch(isTrainer ? `${API_URL}/api/classes` : `${API_URL}/api/workouts/me`, {
           headers: isTrainer
             ? {}
             : {

@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Link, useNavigate } from 'react-router'
 import { useAuth } from '../../context/AuthContext'
 import '../Register/Register.scss'
+import { API_URL } from '../../config/api'
 
 export const Login = () => {
   const [loading, setLoading] = useState(false)
@@ -18,7 +19,7 @@ export const Login = () => {
     setError('')
 
     try {
-      const response = await fetch('/api/auth/login', {
+      const response = await fetch(`${API_URL}/api/auth/login`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

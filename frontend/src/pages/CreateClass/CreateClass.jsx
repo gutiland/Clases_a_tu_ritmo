@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { Link, Navigate, useNavigate } from 'react-router'
 import { useAuth } from '../../context/AuthContext'
 import '../Register/Register.scss'
+import { API_URL } from '../../config/api'
 
 const CreateClass = () => {
   const [title, setTitle] = useState('')
@@ -21,7 +22,7 @@ const CreateClass = () => {
 
     const loadPrograms = async () => {
       try {
-        const response = await fetch('/api/programs', {
+        const response = await fetch(`${API_URL}/api/programs`, {
           signal: controller.signal
         })
 
@@ -55,7 +56,7 @@ const CreateClass = () => {
     setError('')
 
     try {
-      const response = await fetch('/api/classes', {
+      const response = await fetch(`${API_URL}/api/classes`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

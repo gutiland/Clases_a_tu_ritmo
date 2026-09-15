@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router'
 import { useAuth } from '../../context/AuthContext'
 import './ClassDetails.scss'
+import { API_URL } from '../../config/api'
 
 const ClassDetails = () => {
   const { id } = useParams()
@@ -29,8 +30,8 @@ const ClassDetails = () => {
     const loadClassDetails = async () => {
       try {
         const [classResponse, tracksResponse] = await Promise.all([
-          fetch(`/api/classes/${id}`, { signal: controller.signal }),
-          fetch(`/api/classes/${id}/tracks`, { signal: controller.signal })
+          fetch(`${API_URL}/api/classes/${id}`, { signal: controller.signal }),
+          fetch(`${API_URL}/api/classes/${id}/tracks`, { signal: controller.signal })
         ])
 
         if (!classResponse.ok || !tracksResponse.ok) {
@@ -68,7 +69,7 @@ const ClassDetails = () => {
 
     const loadCompletedState = async () => {
       try {
-        const response = await fetch('/api/workouts/me', {
+        const response = await fetch(`${API_URL}/api/workouts/me`, {
           headers: {
             Authorization: `Bearer ${token}`
           },
@@ -104,7 +105,7 @@ const ClassDetails = () => {
     setCompleteSuccess('')
 
     try {
-      const response = await fetch('/api/workouts', {
+      const response = await fetch(`${API_URL}/api/workouts`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -136,7 +137,7 @@ const ClassDetails = () => {
     setTrackError('')
 
     try {
-      const response = await fetch(`/api/classes/${id}/tracks`, {
+      const response = await fetch(`${API_URL}/api/classes/${id}/tracks`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

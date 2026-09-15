@@ -1,3 +1,4 @@
+import { API_URL } from '../../config/api'
 ﻿import { useEffect, useState } from 'react'
 import { Link } from 'react-router'
 import ClassCard from '../../components/ClassCard/ClassCard'
@@ -15,7 +16,7 @@ const Home = () => {
 
     const loadSampleClasses = async () => {
       try {
-        const response = await fetch('/api/classes', {
+        const response = await fetch(`${API_URL}/api/classes`, {
           signal: controller.signal
         })
 

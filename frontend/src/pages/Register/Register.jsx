@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router'
 import './Register.scss'
+import { API_URL } from '../../config/api'
 
 const Register = () => {
   const [name, setName] = useState('')
@@ -20,7 +21,7 @@ const Register = () => {
     setSuccess('')
 
     try {
-      const response = await fetch('/api/auth/register', {
+      const response = await fetch(`${API_URL}/api/auth/register`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { Navigate } from 'react-router'
 import { useAuth } from '../../context/AuthContext'
 import './AdminPanel.scss'
+import { API_URL } from '../../config/api'
 
 const AdminPanel = () => {
   const { token, user, isAdmin } = useAuth()
@@ -21,7 +22,7 @@ const AdminPanel = () => {
 
     const loadUsers = async () => {
       try {
-        const response = await fetch('/api/users', {
+        const response = await fetch(`${API_URL}/api/users`, {
           headers: {
             Authorization: `Bearer ${token}`
           },
@@ -55,7 +56,7 @@ const AdminPanel = () => {
     setError('')
 
     try {
-      const response = await fetch(`/api/users/${userId}/role`, {
+      const response = await fetch(`${API_URL}/api/users/${userId}/role`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
@@ -87,7 +88,7 @@ const AdminPanel = () => {
     setError('')
 
     try {
-      const response = await fetch(`/api/users/${selectedUserId}`, {
+      const response = await fetch(`${API_URL}/api/users/${selectedUserId}`, {
         method: 'DELETE',
         headers: {
           Authorization: `Bearer ${token}`

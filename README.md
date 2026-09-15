@@ -229,6 +229,7 @@ Crear un archivo `.env` dentro de `backend/` con este contenido:
 PORT=3000
 DB_URL=TU_URL_DE_MONGODB
 JWT_SECRET=TU_SECRETO_JWT
+FRONTEND_URL=TU_URL_DEL_FRONTEND
 ```
 
 ### 4. Ejecutar el seed
@@ -252,7 +253,17 @@ cd frontend
 npm install
 ```
 
-### 7. Arrancar el frontend
+### 7. Variables de entorno del frontend para producción
+
+Para desplegar el frontend hay que crear esta variable en Vercel:
+
+```env
+VITE_API_URL=https://clases-a-tu-ritmo.onrender.com
+```
+
+En local puede quedar vacía porque Vite usa el proxy configurado en `vite.config.js`.
+
+### 8. Arrancar el frontend
 
 ```bash
 npm run dev
