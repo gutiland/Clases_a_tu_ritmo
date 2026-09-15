@@ -1,0 +1,232 @@
+.class-details {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  padding-block: var(--space-xl);
+
+  > a {
+    width: fit-content;
+    color: var(--color-text-muted);
+    font-weight: 700;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: var(--color-primary);
+    }
+  }
+
+  h1 {
+    font-size: clamp(2rem, 6vw, 4rem);
+    line-height: 1;
+  }
+
+  &__program {
+    width: fit-content;
+    padding: 0.35rem 0.7rem;
+    border-radius: 999px;
+    background-color: rgba(196, 241, 107, 0.14);
+    color: var(--color-primary);
+    font-size: 0.8rem;
+    font-weight: 800;
+    text-transform: uppercase;
+  }
+
+  &__info {
+    color: var(--color-text-muted);
+    font-size: 1.05rem;
+  }
+
+  &__media {
+    width: 100%;
+    overflow: hidden;
+    border-radius: var(--radius);
+    background-color: var(--color-surface);
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+  }
+
+  &__tracks {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  &__tracks h2 {
+    margin-top: var(--space-sm);
+    font-size: 1.6rem;
+  }
+
+  &__track {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-sm);
+    width: 100%;
+    padding: var(--space-sm);
+    border-radius: var(--radius);
+    background-color: var(--color-surface);
+    transition: transform 0.2s ease, background-color 0.2s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+      background-color: #232632;
+    }
+
+    > span {
+      display: grid;
+      place-items: center;
+      width: 2.2rem;
+      height: 2.2rem;
+      border-radius: 50%;
+      background-color: var(--color-primary);
+      color: var(--color-background);
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+
+    h3 {
+      margin: 0;
+      font-size: 1.05rem;
+    }
+
+    p {
+      margin-top: 0.25rem;
+      color: var(--color-text-muted);
+    }
+  }
+
+  &__track-button {
+    margin-top: var(--space-xs);
+    padding: 0.55rem 0.85rem;
+    border: 0;
+    border-radius: var(--radius);
+    background-color: var(--color-primary);
+    color: var(--color-background);
+    font-weight: 800;
+    cursor: pointer;
+  }
+
+  &__track-status {
+    font-size: 0.9rem;
+  }
+
+  &__completed {
+    width: fit-content;
+    padding: 0.55rem 0.85rem;
+    border-radius: var(--radius);
+    background-color: rgba(196, 241, 107, 0.14);
+    color: var(--color-primary);
+    font-weight: 800;
+  }
+
+  &__complete {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-xs);
+
+    button {
+      border: 0;
+      border-radius: var(--radius);
+      padding: 0.8rem 1rem;
+      background-color: var(--color-primary);
+      color: var(--color-background);
+      font-weight: 800;
+      cursor: pointer;
+
+      &:disabled {
+        cursor: not-allowed;
+        opacity: 0.65;
+      }
+    }
+  }
+
+  &__complete-error {
+    color: #ff7a7a;
+  }
+
+  &__complete-success {
+    color: var(--color-primary);
+  }
+
+  &__create-track {
+    width: 100%;
+    padding: var(--space-lg);
+    border-radius: var(--radius);
+    background-color: var(--color-surface);
+
+    h2 {
+      margin-bottom: var(--space-md);
+    }
+  }
+
+  &__track-form {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-sm);
+
+    div {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-xs);
+    }
+
+    label {
+      font-weight: 700;
+    }
+
+    input {
+      width: 100%;
+      border: 1px solid transparent;
+      border-radius: var(--radius);
+      padding: 0.8rem 1rem;
+      background-color: var(--color-background);
+      color: var(--color-text);
+
+      &:focus {
+        border-color: var(--color-primary);
+        outline: none;
+      }
+    }
+
+    button {
+      border: 0;
+      border-radius: var(--radius);
+      padding: 0.9rem 1rem;
+      background-color: var(--color-primary);
+      color: var(--color-background);
+      font-weight: 800;
+      cursor: pointer;
+
+      &:disabled {
+        cursor: not-allowed;
+        opacity: 0.65;
+      }
+    }
+  }
+
+  &__track-form-full,
+  &__track-error {
+    grid-column: 1 / -1;
+  }
+
+  &__track-error {
+    color: #ff7a7a;
+  }
+
+  @media (max-width: 48rem) {
+    padding-block: var(--space-lg);
+
+    &__track {
+      padding: var(--space-sm);
+    }
+
+    &__track-form {
+      grid-template-columns: 1fr;
+    }
+  }
+}

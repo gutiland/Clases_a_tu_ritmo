@@ -1,0 +1,137 @@
+﻿.header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: var(--color-surface);
+  padding-block: var(--space-md);
+}
+
+.header__content {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+}
+
+.header__brand {
+  color: var(--color-text);
+  font-size: 1.25rem;
+  font-weight: 800;
+}
+
+.header__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.header__menu-button {
+  display: none;
+  border: 1px solid var(--color-text-muted);
+  border-radius: var(--radius);
+  padding: 0.65rem 0.9rem;
+  background-color: transparent;
+  color: var(--color-text);
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.header__nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--space-sm);
+}
+
+.header__link,
+.header__user {
+  color: var(--color-text-muted);
+  font-weight: 700;
+}
+
+.header__link {
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: var(--color-primary);
+  }
+}
+
+.header__button {
+  border: 0;
+  border-radius: var(--radius);
+  padding: 0.65rem 0.9rem;
+  background-color: var(--color-primary);
+  color: var(--color-background);
+  font-weight: 800;
+  cursor: pointer;
+}
+
+@media (min-width: 801px) {
+  .header__actions {
+    order: 3;
+  }
+
+  .header__nav {
+    margin-left: auto;
+  }
+
+  .header__menu-button {
+    display: none;
+  }
+}
+
+@media (max-width: 800px) {
+  .header__content {
+    flex-wrap: wrap;
+  }
+
+  .header__brand {
+    max-width: 11rem;
+  }
+
+  .header__actions {
+    margin-left: auto;
+  }
+
+  .header__user {
+    display: none;
+  }
+
+  .header__menu-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .header__nav {
+    position: absolute;
+    top: calc(100% + var(--space-sm));
+    right: 0;
+    display: none;
+    width: min(100%, 20rem);
+    flex-direction: column;
+    align-items: stretch;
+    padding: var(--space-sm);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius);
+    background-color: var(--color-surface);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.35);
+  }
+
+  .header__nav--open {
+    display: flex;
+  }
+
+  .header__link,
+  .header__button {
+    width: 100%;
+    text-align: left;
+  }
+
+  .header__link {
+    padding: 0.65rem 0.75rem;
+  }
+}
+

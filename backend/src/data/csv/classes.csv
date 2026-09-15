@@ -1,0 +1,11 @@
+title,programName,trainerEmail,level,duration,image
+BodyCombat 1,BodyCombat,laura.trainer@example.com,Principiante,45,https://images.prismic.io/zumba/pGgkTzeVOQlQbs71_Zumba%C2%AEstepsmall.jpg?auto=format,compress
+BodyCombat 2,BodyCombat,pablo.trainer@example.com,Intermedio,45,https://images.prismic.io/zumba/pGgkTzeVOQlQbs71_Zumba%C2%AEstepsmall.jpg?auto=format,compress
+BodyPump 1,BodyPump,pablo.trainer@example.com,Principiante,45,https://images.prismic.io/zumba/pGgkTzeVOQlQbs71_Zumba%C2%AEstepsmall.jpg?auto=format,compress
+BodyPump 2,BodyPump,sara.trainer@example.com,Intermedio,45,https://images.prismic.io/zumba/pGgkTzeVOQlQbs71_Zumba%C2%AEstepsmall.jpg?auto=format,compress
+Core 1,Core,sara.trainer@example.com,Principiante,45,https://images.prismic.io/zumba/pGgkTzeVOQlQbs71_Zumba%C2%AEstepsmall.jpg?auto=format,compress
+Core 2,Core,laura.trainer@example.com,Intermedio,45,https://images.prismic.io/zumba/pGgkTzeVOQlQbs71_Zumba%C2%AEstepsmall.jpg?auto=format,compress
+Stretch 1,Stretch,laura.trainer@example.com,Principiante,45,https://images.prismic.io/zumba/pGgkTzeVOQlQbs71_Zumba%C2%AEstepsmall.jpg?auto=format,compress
+Stretch 2,Stretch,pablo.trainer@example.com,Intermedio,45,https://images.prismic.io/zumba/pGgkTzeVOQlQbs71_Zumba%C2%AEstepsmall.jpg?auto=format,compress
+HIIT 1,HIIT,pablo.trainer@example.com,Principiante,45,https://images.prismic.io/zumba/pGgkTzeVOQlQbs71_Zumba%C2%AEstepsmall.jpg?auto=format,compress
+HIIT 2,HIIT,sara.trainer@example.com,Intermedio,45,https://images.prismic.io/zumba/pGgkTzeVOQlQbs71_Zumba%C2%AEstepsmall.jpg?auto=format,compress

@@ -1,0 +1,82 @@
+.catalog {
+  padding-block: var(--space-lg);
+
+  &__description {
+    margin-top: var(--space-xs);
+    color: var(--color-text-muted);
+  }
+  &__status{
+    padding: var(--space-lg);
+    width: 100%;
+    text-align: center;
+    color: rgb(190, 79, 79);
+    }
+  &__search{
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+    margin-top: var(--space-md);
+    
+    
+    input{
+        width: 100%;
+        max-width: 30rem;
+        min-height: 40px;
+        padding: var(--space-xs)var(--space-sm);
+        border: 1px solid var(--color-text-muted);
+        border-radius: var(--radius);
+        background-color: var(--color-surface);
+        color: var(--color-text);
+        &::placeholder{
+            color: var(--color-text-muted);
+        }
+    }
+  }
+  &__filter{
+    margin-top: var(--space-md);
+  }
+  select {
+  appearance: none;
+  min-height: 44px;
+  max-width: 100%;
+  padding: var(--space-xs)var(--space-sm);
+  margin-left: var(--space-sm);
+
+  font: inherit;
+  color: var(--color-text);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-text-muted);
+  border-radius: var(--radius);
+
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%23c4f16b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+
+  &:hover {
+    border-color: var(--color-primary);
+  }
+
+  &:focus-visible {
+    border-color: var(--color-primary);
+    outline: 2px solid var(--color-primary);
+    outline-offset: 3px;
+  }
+
+  option {
+    appearance: none;
+    background-color: var(--color-surface);
+    color: var(--color-text);
+  }
+}
+}
+
+
+.classes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+  gap: var(--space-md);
+  margin-block: var(--space-lg);
+}

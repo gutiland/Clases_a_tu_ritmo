@@ -1,0 +1,7 @@
+name,email,password,role,avatar
+Laura Martin,laura.trainer@example.com,Password123,trainer,https://images.prismic.io/zumba/pGgkTzeVOQlQbs71_Zumba%C2%AEstepsmall.jpg?auto=format,compress
+Pablo Ruiz,pablo.trainer@example.com,Password123,trainer,https://images.prismic.io/zumba/pGgkTzeVOQlQbs71_Zumba%C2%AEstepsmall.jpg?auto=format,compress
+Sara Gomez,sara.trainer@example.com,Password123,trainer,https://images.prismic.io/zumba/pGgkTzeVOQlQbs71_Zumba%C2%AEstepsmall.jpg?auto=format,compress
+Marta Lopez,marta.client@example.com,Password123,client,https://images.prismic.io/zumba/pGgkTzeVOQlQbs71_Zumba%C2%AEstepsmall.jpg?auto=format,compress
+Daniel Perez,daniel.client@example.com,Password123,client,https://images.prismic.io/zumba/pGgkTzeVOQlQbs71_Zumba%C2%AEstepsmall.jpg?auto=format,compress
+Admin,admin@example.es,Password123,admin,https://images.prismic.io/zumba/pGgkTzeVOQlQbs71_Zumba%C2%AEstepsmall.jpg?auto=format,compress

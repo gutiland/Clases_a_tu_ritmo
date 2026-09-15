@@ -1,0 +1,91 @@
+classTitle,trainerEmail,title,order,duration,videoUrl,focus
+BodyCombat 1,laura.trainer@example.com,Warm up,1,5,,Activacion general
+BodyCombat 1,laura.trainer@example.com,Primer bloque,2,5,,Tecnica y ritmo
+BodyCombat 1,laura.trainer@example.com,Bloque cardiovascular,3,5,,Resistencia
+BodyCombat 1,laura.trainer@example.com,Bloque de fuerza,4,5,,Fuerza funcional
+BodyCombat 1,laura.trainer@example.com,Trabajo central,5,5,,Core y estabilidad
+BodyCombat 1,laura.trainer@example.com,Pico de intensidad,6,5,,Potencia
+BodyCombat 1,laura.trainer@example.com,Recuperacion activa,7,5,,Control respiratorio
+BodyCombat 1,laura.trainer@example.com,Ultimo reto,8,5,,Coordinacion
+BodyCombat 1,laura.trainer@example.com,Cool down,9,5,,Vuelta a la calma
+BodyCombat 2,pablo.trainer@example.com,Warm up,1,5,,Activacion general
+BodyCombat 2,pablo.trainer@example.com,Primer bloque,2,5,,Tecnica y ritmo
+BodyCombat 2,pablo.trainer@example.com,Bloque cardiovascular,3,5,,Resistencia
+BodyCombat 2,pablo.trainer@example.com,Bloque de fuerza,4,5,,Fuerza funcional
+BodyCombat 2,pablo.trainer@example.com,Trabajo central,5,5,,Core y estabilidad
+BodyCombat 2,pablo.trainer@example.com,Pico de intensidad,6,5,,Potencia
+BodyCombat 2,pablo.trainer@example.com,Recuperacion activa,7,5,,Control respiratorio
+BodyCombat 2,pablo.trainer@example.com,Ultimo reto,8,5,,Coordinacion
+BodyCombat 2,pablo.trainer@example.com,Cool down,9,5,,Vuelta a la calma
+BodyPump 1,pablo.trainer@example.com,Warm up,1,5,,Activacion general
+BodyPump 1,pablo.trainer@example.com,Primer bloque,2,5,,Tecnica y ritmo
+BodyPump 1,pablo.trainer@example.com,Bloque cardiovascular,3,5,,Resistencia
+BodyPump 1,pablo.trainer@example.com,Bloque de fuerza,4,5,,Fuerza funcional
+BodyPump 1,pablo.trainer@example.com,Trabajo central,5,5,,Core y estabilidad
+BodyPump 1,pablo.trainer@example.com,Pico de intensidad,6,5,,Potencia
+BodyPump 1,pablo.trainer@example.com,Recuperacion activa,7,5,,Control respiratorio
+BodyPump 1,pablo.trainer@example.com,Ultimo reto,8,5,,Coordinacion
+BodyPump 1,pablo.trainer@example.com,Cool down,9,5,,Vuelta a la calma
+BodyPump 2,sara.trainer@example.com,Warm up,1,5,,Activacion general
+BodyPump 2,sara.trainer@example.com,Primer bloque,2,5,,Tecnica y ritmo
+BodyPump 2,sara.trainer@example.com,Bloque cardiovascular,3,5,,Resistencia
+BodyPump 2,sara.trainer@example.com,Bloque de fuerza,4,5,,Fuerza funcional
+BodyPump 2,sara.trainer@example.com,Trabajo central,5,5,,Core y estabilidad
+BodyPump 2,sara.trainer@example.com,Pico de intensidad,6,5,,Potencia
+BodyPump 2,sara.trainer@example.com,Recuperacion activa,7,5,,Control respiratorio
+BodyPump 2,sara.trainer@example.com,Ultimo reto,8,5,,Coordinacion
+BodyPump 2,sara.trainer@example.com,Cool down,9,5,,Vuelta a la calma
+Core 1,sara.trainer@example.com,Warm up,1,5,,Activacion general
+Core 1,sara.trainer@example.com,Primer bloque,2,5,,Tecnica y ritmo
+Core 1,sara.trainer@example.com,Bloque cardiovascular,3,5,,Resistencia
+Core 1,sara.trainer@example.com,Bloque de fuerza,4,5,,Fuerza funcional
+Core 1,sara.trainer@example.com,Trabajo central,5,5,,Core y estabilidad
+Core 1,sara.trainer@example.com,Pico de intensidad,6,5,,Potencia
+Core 1,sara.trainer@example.com,Recuperacion activa,7,5,,Control respiratorio
+Core 1,sara.trainer@example.com,Ultimo reto,8,5,,Coordinacion
+Core 1,sara.trainer@example.com,Cool down,9,5,,Vuelta a la calma
+Core 2,laura.trainer@example.com,Warm up,1,5,,Activacion general
+Core 2,laura.trainer@example.com,Primer bloque,2,5,,Tecnica y ritmo
+Core 2,laura.trainer@example.com,Bloque cardiovascular,3,5,,Resistencia
+Core 2,laura.trainer@example.com,Bloque de fuerza,4,5,,Fuerza funcional
+Core 2,laura.trainer@example.com,Trabajo central,5,5,,Core y estabilidad
+Core 2,laura.trainer@example.com,Pico de intensidad,6,5,,Potencia
+Core 2,laura.trainer@example.com,Recuperacion activa,7,5,,Control respiratorio
+Core 2,laura.trainer@example.com,Ultimo reto,8,5,,Coordinacion
+Core 2,laura.trainer@example.com,Cool down,9,5,,Vuelta a la calma
+Stretch 1,laura.trainer@example.com,Warm up,1,5,,Activacion general
+Stretch 1,laura.trainer@example.com,Primer bloque,2,5,,Tecnica y ritmo
+Stretch 1,laura.trainer@example.com,Bloque cardiovascular,3,5,,Resistencia
+Stretch 1,laura.trainer@example.com,Bloque de fuerza,4,5,,Fuerza funcional
+Stretch 1,laura.trainer@example.com,Trabajo central,5,5,,Core y estabilidad
+Stretch 1,laura.trainer@example.com,Pico de intensidad,6,5,,Potencia
+Stretch 1,laura.trainer@example.com,Recuperacion activa,7,5,,Control respiratorio
+Stretch 1,laura.trainer@example.com,Ultimo reto,8,5,,Coordinacion
+Stretch 1,laura.trainer@example.com,Cool down,9,5,,Vuelta a la calma
+Stretch 2,pablo.trainer@example.com,Warm up,1,5,,Activacion general
+Stretch 2,pablo.trainer@example.com,Primer bloque,2,5,,Tecnica y ritmo
+Stretch 2,pablo.trainer@example.com,Bloque cardiovascular,3,5,,Resistencia
+Stretch 2,pablo.trainer@example.com,Bloque de fuerza,4,5,,Fuerza funcional
+Stretch 2,pablo.trainer@example.com,Trabajo central,5,5,,Core y estabilidad
+Stretch 2,pablo.trainer@example.com,Pico de intensidad,6,5,,Potencia
+Stretch 2,pablo.trainer@example.com,Recuperacion activa,7,5,,Control respiratorio
+Stretch 2,pablo.trainer@example.com,Ultimo reto,8,5,,Coordinacion
+Stretch 2,pablo.trainer@example.com,Cool down,9,5,,Vuelta a la calma
+HIIT 1,pablo.trainer@example.com,Warm up,1,5,,Activacion general
+HIIT 1,pablo.trainer@example.com,Primer bloque,2,5,,Tecnica y ritmo
+HIIT 1,pablo.trainer@example.com,Bloque cardiovascular,3,5,,Resistencia
+HIIT 1,pablo.trainer@example.com,Bloque de fuerza,4,5,,Fuerza funcional
+HIIT 1,pablo.trainer@example.com,Trabajo central,5,5,,Core y estabilidad
+HIIT 1,pablo.trainer@example.com,Pico de intensidad,6,5,,Potencia
+HIIT 1,pablo.trainer@example.com,Recuperacion activa,7,5,,Control respiratorio
+HIIT 1,pablo.trainer@example.com,Ultimo reto,8,5,,Coordinacion
+HIIT 1,pablo.trainer@example.com,Cool down,9,5,,Vuelta a la calma
+HIIT 2,sara.trainer@example.com,Warm up,1,5,,Activacion general
+HIIT 2,sara.trainer@example.com,Primer bloque,2,5,,Tecnica y ritmo
+HIIT 2,sara.trainer@example.com,Bloque cardiovascular,3,5,,Resistencia
+HIIT 2,sara.trainer@example.com,Bloque de fuerza,4,5,,Fuerza funcional
+HIIT 2,sara.trainer@example.com,Trabajo central,5,5,,Core y estabilidad
+HIIT 2,sara.trainer@example.com,Pico de intensidad,6,5,,Potencia
+HIIT 2,sara.trainer@example.com,Recuperacion activa,7,5,,Control respiratorio
+HIIT 2,sara.trainer@example.com,Ultimo reto,8,5,,Coordinacion
+HIIT 2,sara.trainer@example.com,Cool down,9,5,,Vuelta a la calma

@@ -1,0 +1,74 @@
+
+
+:root {
+  --color-background: #111218;
+  --color-surface: #1c1e28;
+  --color-text: #f5f5f7;
+  --color-text-muted: #b8bac7;
+  --color-primary: #c4f16b;
+  --color-border-hover:#f2d45b;
+
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+
+  --radius: 0.75rem;
+  --content-width: 72rem;
+  --font-body: Arial, Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-background);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+img,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 4px;
+}
+
+.container {
+  width: min(100% - 2 * var(--space-sm), var(--content-width));
+  margin-inline: auto;
+  
+}
+.classes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+  gap: var(--space-md);
+  margin-block: var(--space-lg);
+}
