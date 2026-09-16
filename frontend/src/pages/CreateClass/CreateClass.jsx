@@ -10,6 +10,7 @@ const CreateClass = () => {
   const [level, setLevel] = useState('Principiante')
   const [duration, setDuration] = useState(45)
   const [image, setImage] = useState('')
+  const [imageFile, setImageFile] = useState(null)
   const [programs, setPrograms] = useState([])
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
@@ -56,25 +57,30 @@ const CreateClass = () => {
     setError('')
 
     try {
+      const formData = new FormData()
+      formData.append('title', title)
+      formData.append('program', program)
+      formData.append('level', level)
+      formData.append('duration', Number(duration))
+      if (imageFile) {
+        formData.append('image', imageFile)
+      } else if (image) {
+        formData.append('image', image)
+      }
+
       const response = await fetch(`${API_URL}/api/classes`, {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
           Authorization: `Bearer ${token}`
         },
-        body: JSON.stringify({
-          title,
-          program,
-          level,
-          duration: Number(duration),
-          image
-        })
+        body: formData
       })
 
-      const data = await response.json()
+      const responseText = await response.text()
+      const data = responseText ? JSON.parse(responseText) : {}
 
       if (!response.ok) {
-        throw new Error(data.message || 'No se pudo crear la clase')
+        throw new Error(data.error || data.message || 'No se pudo crear la clase')
       }
 
       navigate(`/classes/${data._id}`)
@@ -147,7 +153,17 @@ const CreateClass = () => {
         </div>
 
         <div className="auth-form__field">
-          <label htmlFor="class_image">Imagen</label>
+          <label htmlFor="class_image_file">Imagen de la clase</label>
+          <input
+            id="class_image_file"
+            type="file"
+            accept="image/*"
+            onChange={(event) => setImageFile(event.target.files[0])}
+          />
+        </div>
+
+        <div className="auth-form__field">
+          <label htmlFor="class_image">URL de imagen alternativa</label>
           <input
             id="class_image"
             type="url"

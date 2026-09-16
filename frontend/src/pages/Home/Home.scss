@@ -9,7 +9,8 @@
   }
 
   &__hero-content,
-  &__user-card {
+  &__user-card,
+  &__steps-card {
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: calc(var(--radius) * 1.5);
     background: linear-gradient(135deg, var(--color-surface), #141722);
@@ -70,12 +71,26 @@
     color: var(--color-text);
   }
 
-  &__user-card {
+  &__side {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    gap: var(--space-md);
+  }
+
+  &__user-card,
+  &__steps-card {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     gap: var(--space-sm);
     padding: var(--space-lg);
+  }
+
+  &__user-card {
+    justify-content: center;
+  }
+
+  &__steps-card {
+    justify-content: flex-start;
   }
 
   &__user-label {
@@ -94,6 +109,36 @@
     width: fit-content;
     margin-top: var(--space-xs);
     padding: 0.75rem 1rem;
+  }
+
+
+  &__steps-card ul {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__steps-card li {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    color: var(--color-text-muted);
+    font-weight: 700;
+  }
+
+  &__steps-card span {
+    display: grid;
+    place-items: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background-color: rgba(196, 241, 107, 0.14);
+    color: var(--color-primary);
+    flex-shrink: 0;
+    font-weight: 900;
   }
 
   &__samples {

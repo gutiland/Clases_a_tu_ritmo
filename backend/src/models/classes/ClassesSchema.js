@@ -7,7 +7,8 @@ const ClassesSchema = new mongoose.Schema(
     trainer: {type: mongoose.Schema.Types.ObjectId,ref: 'Users',required: true},
     level: {type: String,required: true,enum: ['Principiante', 'Intermedio', 'Avanzado']},
     duration: {type: Number,required: true,default: 45,min: 1},
-    image: {type: String,default: ''}
+    image: {type: String,default: ''},
+    imagePublicId: {type: String, default: ''}
   },
   {
     timestamps: true

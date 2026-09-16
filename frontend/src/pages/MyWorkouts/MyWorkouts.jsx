@@ -1,5 +1,5 @@
 import { API_URL } from '../../config/api'
-﻿import { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Link, Navigate } from 'react-router'
 import { useAuth } from '../../context/AuthContext'
 import './MyWorkouts.scss'
@@ -30,11 +30,13 @@ const MyWorkouts = () => {
           signal: controller.signal
         })
 
-        const data = await response.json()
+        const responseText = await response.text()
+        const data = responseText ? JSON.parse(responseText) : []
 
         if (!response.ok) {
           throw new Error(
-            data.message ||
+            data.error ||
+              data.message ||
               (isTrainer
                 ? 'No se pudieron cargar tus clases'
                 : 'No se pudieron cargar tus entrenamientos')

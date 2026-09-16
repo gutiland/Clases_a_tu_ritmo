@@ -1,5 +1,13 @@
 ﻿# Clases a tu ritmo
 
+## Enlaces del proyecto
+
+| Servicio | URL |
+| --- | --- |
+| Frontend | https://clases-a-tu-ritmo.vercel.app/ |
+| Backend | https://clases-a-tu-ritmo.onrender.com/ |
+| Health check API | https://clases-a-tu-ritmo.onrender.com/api/health |
+
 Clases a tu ritmo es una aplicación FullStack para entrenadores y clientes. La idea nace como una plataforma donde un entrenador puede crear sesiones de entrenamiento divididas en tracks, y un cliente puede seguir la clase desde casa de forma visual, como una experiencia tipo Just Dance, pero sin detección de movimiento.
 
 El objetivo del proyecto es resolver un problema concreto: muchas personas quieren entrenar desde casa, pero necesitan una guía clara, ordenada y motivadora. Por eso la aplicación organiza los entrenamientos por programas, clases y tracks, permitiendo que cada usuario tenga una experiencia distinta según su rol.
@@ -33,6 +41,8 @@ También existe un rol de administrador para gestionar usuarios y cambiar roles 
 - JSON Web Token
 - Bcrypt
 - Dotenv
+- Cloudinary
+- Multer
 - File System de Node.js (`fs`)
 
 ## Funcionalidades principales
@@ -46,6 +56,9 @@ También existe un rol de administrador para gestionar usuarios y cambiar roles 
 - Detalle de cada clase.
 - Tracks asociados a cada clase.
 - Creación de clases por entrenadores.
+- Subida de imágenes de clases con Cloudinary.
+- Eliminación automática en Cloudinary de la imagen anterior al editar una clase.
+- Edición y eliminación de clases por parte del trainer propietario o admin.
 - Creación de tracks por entrenadores.
 - Marcar clases como completadas por clientes.
 - Página de entrenamientos completados para clientes.
@@ -94,7 +107,7 @@ frontend/
 | --- | --- | --- |
 | `Users` | Usuarios de la aplicación. | Puede ser trainer de clases y tracks. Puede tener sesiones completadas. |
 | `Programs` | Programas de entrenamiento, como BodyCombat, BodyPump o HIIT. | Un programa tiene muchas clases. |
-| `Classes` | Sesiones de entrenamiento de unos 45 minutos. | Pertenece a un programa y a un trainer. |
+| `Classes` | Sesiones de entrenamiento de unos 45 minutos. | Pertenece a un programa y a un trainer. También guarda la URL de imagen y, si procede, el `public_id` de Cloudinary. |
 | `Tracks` | Partes pequeñas de una clase. | Pertenece a una clase y a un trainer. |
 | `WorkoutSessions` | Registro de clases completadas por clientes. | Relaciona un usuario con una clase completada. |
 
@@ -126,6 +139,13 @@ Cantidad actual de datos iniciales:
 | **Total** | **111** |
 
 El archivo `backend/src/seeds/seed.js` lee los CSV con `fs.readFileSync`, transforma los datos y crea las relaciones entre colecciones antes de insertarlas en MongoDB.
+
+
+## Nota sobre las imágenes del seed
+
+Las clases creadas desde los archivos CSV usan imágenes de ejemplo y por eso varias pueden aparecer repetidas. Esto ocurre porque son datos iniciales para poblar la base de datos y poder probar la aplicación rápidamente.
+
+Las clases creadas desde el frontend por un entrenador sí pueden subir una imagen propia mediante Cloudinary. Cuando una clase creada con Cloudinary cambia de imagen, la imagen anterior se elimina de Cloudinary para no dejar archivos antiguos sin uso.
 
 ## Endpoints del backend
 
@@ -163,6 +183,8 @@ El archivo `backend/src/seeds/seed.js` lee los CSV con `fs.readFileSync`, transf
 | GET | `/api/classes` | Pública | Obtiene todas las clases con su programa y entrenador. |
 | GET | `/api/classes/:classId` | Pública | Obtiene el detalle de una clase concreta. |
 | POST | `/api/classes` | Trainer/Admin | Crea una nueva clase. |
+| PATCH | `/api/classes/:classId` | Trainer propietario/Admin | Edita una clase. |
+| DELETE | `/api/classes/:classId` | Trainer propietario/Admin | Elimina una clase junto con sus tracks y sesiones asociadas. |
 
 ### Tracks
 
@@ -229,7 +251,10 @@ Crear un archivo `.env` dentro de `backend/` con este contenido:
 PORT=3000
 DB_URL=TU_URL_DE_MONGODB
 JWT_SECRET=TU_SECRETO_JWT
-FRONTEND_URL=TU_URL_DEL_FRONTEND
+FRONTEND_URL=https://clases-a-tu-ritmo.vercel.app
+CLOUDINARY_CLOUD_NAME=TU_CLOUD_NAME
+CLOUDINARY_API_KEY=TU_API_KEY
+CLOUDINARY_API_SECRET=TU_API_SECRET
 ```
 
 ### 4. Ejecutar el seed
@@ -320,3 +345,4 @@ Los roles permiten que la misma aplicación tenga experiencias distintas. Un cli
 ## Estado del proyecto
 
 El proyecto tiene implementado el MVP principal: autenticación, roles, catálogo, clases, tracks, sesiones completadas, panel admin y seed desde CSV. Queda como parte final preparar el despliegue del backend y frontend.
+

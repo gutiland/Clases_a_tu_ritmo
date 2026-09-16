@@ -1,5 +1,5 @@
 import { API_URL } from '../../config/api'
-﻿import { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router'
 import ClassCard from '../../components/ClassCard/ClassCard'
 import { useAuth } from '../../context/AuthContext'
@@ -79,23 +79,35 @@ const Home = () => {
           </div>
         </div>
 
-        <aside className="home__user-card">
-          {isAuthenticated ? (
-            <>
-              <p className="home__user-label">Sesión iniciada</p>
-              <h2>Hola, {user.name}</h2>
-              <Link to={isAdmin ? '/admin' : '/my-workouts'}>
-                {isAdmin ? 'Ir al panel admin' : 'Ver mis entrenamientos'}
-              </Link>
-            </>
-          ) : (
-            <>
-              <p className="home__user-label">Acceso personal</p>
-              <h2>Guarda tu progreso</h2>
-              <p>Inicia sesión para marcar clases completadas y acceder a tu historial.</p>
-              <Link to="/login">Entrar ahora</Link>
-            </>
-          )}
+        <aside className="home__side">
+          <div className="home__user-card">
+            {isAuthenticated ? (
+              <>
+                <p className="home__user-label">Sesión iniciada</p>
+                <h2>Hola, {user.name}</h2>
+                <p>{isTrainer ? 'Gestiona tus clases y tracks desde tu espacio.' : 'Continúa entrenando y revisa tus sesiones completadas.'}</p>
+                <Link to={isAdmin ? '/admin' : '/my-workouts'}>
+                  {isAdmin ? 'Ir al panel admin' : isTrainer ? 'Ver mis clases' : 'Ver mis entrenamientos'}
+                </Link>
+              </>
+            ) : (
+              <>
+                <p className="home__user-label">Acceso personal</p>
+                <h2>Guarda tu progreso</h2>
+                <p>Inicia sesión para marcar clases completadas y acceder a tu historial.</p>
+                <Link to="/login">Entrar ahora</Link>
+              </>
+            )}
+          </div>
+
+          <div className="home__steps-card">
+            <p className="home__user-label">Cómo funciona</p>
+            <ul>
+              <li><span>1</span>Elige una clase del catálogo.</li>
+              <li><span>2</span>Sigue los tracks en orden.</li>
+              <li><span>3</span>Guarda tus sesiones completadas.</li>
+            </ul>
+          </div>
         </aside>
       </section>
 

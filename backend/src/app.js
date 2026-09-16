@@ -31,4 +31,14 @@ app.use('/api/users', usersRouter)
 app.use('/api/programs', programsRouter)
 app.use('/api/auth', authRouter)
 app.use('/api/workouts', workoutSessionsRouter)
+
+app.use((error, req, res, next) => {
+    const statusCode = error.name === 'MulterError' ? 400 : 500
+
+    return res.status(statusCode).json({
+        message: error.message || 'Error interno del servidor',
+        error: error.message
+    })
+})
+
 export default app

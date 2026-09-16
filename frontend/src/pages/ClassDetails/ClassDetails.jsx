@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react'
-import { Link, useParams } from 'react-router'
+import { Link, useNavigate, useParams } from 'react-router'
 import { useAuth } from '../../context/AuthContext'
 import './ClassDetails.scss'
 import { API_URL } from '../../config/api'
 
 const ClassDetails = () => {
   const { id } = useParams()
-  const { token, isTrainer, isAuthenticated } = useAuth()
+  const navigate = useNavigate()
+  const { token, user, isTrainer, isAdmin, isAuthenticated } = useAuth()
 
   const [classItem, setClassItem] = useState(null)
   const [tracks, setTracks] = useState([])
@@ -23,6 +24,15 @@ const ClassDetails = () => {
   const [trackVideoUrl, setTrackVideoUrl] = useState('')
   const [creatingTrack, setCreatingTrack] = useState(false)
   const [trackError, setTrackError] = useState('')
+  const [editTitle, setEditTitle] = useState('')
+  const [editLevel, setEditLevel] = useState('Principiante')
+  const [editDuration, setEditDuration] = useState(45)
+  const [editImage, setEditImage] = useState('')
+  const [editImageFile, setEditImageFile] = useState(null)
+  const [updatingClass, setUpdatingClass] = useState(false)
+  const [deletingClass, setDeletingClass] = useState(false)
+  const [classManageError, setClassManageError] = useState('')
+  const [classManageSuccess, setClassManageSuccess] = useState('')
 
   useEffect(() => {
     const controller = new AbortController()
@@ -42,6 +52,10 @@ const ClassDetails = () => {
         const tracksData = await tracksResponse.json()
 
         setClassItem(classData)
+        setEditTitle(classData.title || '')
+        setEditLevel(classData.level || 'Principiante')
+        setEditDuration(classData.duration || 45)
+        setEditImage(classData.image || '')
         setTracks(tracksData)
       } catch (error) {
         if (error.name !== 'AbortError') {
@@ -174,6 +188,81 @@ const ClassDetails = () => {
     }
   }
 
+
+  const trainerId = classItem?.trainer?._id || classItem?.trainer
+  const userId = user?._id || user?.id
+  const canManageClass = isAdmin || (isTrainer && trainerId === userId)
+
+  const handleUpdateClass = async (event) => {
+    event.preventDefault()
+    setUpdatingClass(true)
+    setClassManageError('')
+    setClassManageSuccess('')
+
+    try {
+      const formData = new FormData()
+      formData.append('title', editTitle)
+      formData.append('level', editLevel)
+      formData.append('duration', Number(editDuration))
+
+      if (editImageFile) {
+        formData.append('image', editImageFile)
+      } else if (editImage) {
+        formData.append('image', editImage)
+      }
+
+      const response = await fetch(`${API_URL}/api/classes/${id}`, {
+        method: 'PATCH',
+        headers: {
+          Authorization: `Bearer ${token}`
+        },
+        body: formData
+      })
+
+      const responseText = await response.text()
+      const data = responseText ? JSON.parse(responseText) : {}
+
+      if (!response.ok) {
+        throw new Error(data.error || data.message || 'No se pudo actualizar la clase')
+      }
+
+      setClassItem(data)
+      setEditImageFile(null)
+      setClassManageSuccess('Clase actualizada correctamente')
+    } catch (error) {
+      setClassManageError(error.message)
+    } finally {
+      setUpdatingClass(false)
+    }
+  }
+
+  const handleDeleteClass = async () => {
+    setDeletingClass(true)
+    setClassManageError('')
+    setClassManageSuccess('')
+
+    try {
+      const response = await fetch(`${API_URL}/api/classes/${id}`, {
+        method: 'DELETE',
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      })
+
+      const responseText = await response.text()
+      const data = responseText ? JSON.parse(responseText) : {}
+
+      if (!response.ok) {
+        throw new Error(data.error || data.message || 'No se pudo eliminar la clase')
+      }
+
+      navigate('/my-workouts')
+    } catch (error) {
+      setClassManageError(error.message)
+      setDeletingClass(false)
+    }
+  }
+
   if (loading) {
     return (
       <main className="container class-details">
@@ -220,6 +309,52 @@ const ClassDetails = () => {
           alt={classItem.title}
         />
       </div>
+
+      {canManageClass && (
+        <section className="class-details__manage">
+          <h2>Gestionar clase</h2>
+
+          <form className="class-details__manage-form" onSubmit={handleUpdateClass}>
+            <div>
+              <label htmlFor="edit_title">Título</label>
+              <input id="edit_title" type="text" value={editTitle} onChange={(event) => setEditTitle(event.target.value)} required />
+            </div>
+
+            <div>
+              <label htmlFor="edit_level">Nivel</label>
+              <select id="edit_level" value={editLevel} onChange={(event) => setEditLevel(event.target.value)}>
+                <option value="Principiante">Principiante</option>
+                <option value="Intermedio">Intermedio</option>
+                <option value="Avanzado">Avanzado</option>
+              </select>
+            </div>
+
+            <div>
+              <label htmlFor="edit_duration">Duración</label>
+              <input id="edit_duration" type="number" min="1" value={editDuration} onChange={(event) => setEditDuration(event.target.value)} required />
+            </div>
+
+            <div>
+              <label htmlFor="edit_image_file">Nueva imagen</label>
+              <input id="edit_image_file" type="file" accept="image/*" onChange={(event) => setEditImageFile(event.target.files[0])} />
+            </div>
+
+            <div className="class-details__manage-form-full">
+              <label htmlFor="edit_image">URL de imagen alternativa</label>
+              <input id="edit_image" type="url" value={editImage} onChange={(event) => setEditImage(event.target.value)} />
+            </div>
+
+            {classManageError && <p className="class-details__manage-error">{classManageError}</p>}
+            {classManageSuccess && <p className="class-details__manage-success">{classManageSuccess}</p>}
+
+            <button type="submit" disabled={updatingClass}>{updatingClass ? 'Guardando...' : 'Guardar cambios'}</button>
+          </form>
+
+          <button className="class-details__delete-button" type="button" onClick={handleDeleteClass} disabled={deletingClass}>
+            {deletingClass ? 'Eliminando...' : 'Eliminar clase'}
+          </button>
+        </section>
+      )}
 
       {isAuthenticated && !isTrainer && (
         <section className="class-details__complete">
