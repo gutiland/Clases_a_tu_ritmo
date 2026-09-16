@@ -145,7 +145,7 @@ El archivo `backend/src/seeds/seed.js` lee los CSV con `fs.readFileSync`, transf
 
 Las clases creadas desde los archivos CSV usan imágenes de ejemplo y por eso varias pueden aparecer repetidas. Esto ocurre porque son datos iniciales para poblar la base de datos y poder probar la aplicación rápidamente.
 
-Las clases creadas desde el frontend por un entrenador sí pueden subir una imagen propia mediante Cloudinary. Cuando una clase creada con Cloudinary cambia de imagen, la imagen anterior se elimina de Cloudinary para no dejar archivos antiguos sin uso.
+Las clases creadas desde el frontend por un entrenador sí pueden subir una imagen propia mediante Cloudinary. Si el entrenador crea una clase sin subir imagen, la aplicación asigna una imagen por defecto para que la tarjeta no quede vacía. Cuando una clase creada con Cloudinary cambia de imagen, la imagen anterior se elimina de Cloudinary para no dejar archivos antiguos sin uso.
 
 ## Endpoints del backend
 

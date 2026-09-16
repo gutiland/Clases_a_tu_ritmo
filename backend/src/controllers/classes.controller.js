@@ -4,6 +4,8 @@ import cloudinary from '../config/cloudinary.js'
 import Tracks from '../models/tracks/TracksSchema.js'
 import WorkoutSessions from '../models/workoutSessions/WorkoutSessionsSchema.js'
 
+const DEFAULT_CLASS_IMAGE_URL = 'https://images.prismic.io/zumba/pGgkTzeVOQlQbs71_Zumba%C2%AEstepsmall.jpg?auto=format,compress'
+
 export const getClasses =async (req,res)=>{
     try{
         const allClasses = await Classes.find()
@@ -48,7 +50,7 @@ export const createClass = async (req, res) => {
             })
         }
 
-        let imageUrl = image || ''
+        let imageUrl = image || DEFAULT_CLASS_IMAGE_URL
 
         let imagePublicId = ''
 
