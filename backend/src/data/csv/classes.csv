@@ -1,11 +1,11 @@
 title,programName,trainerEmail,level,duration,image
-BodyCombat 1,BodyCombat,laura.trainer@example.com,Principiante,45,https://images.prismic.io/zumba/pGgkTzeVOQlQbs71_Zumba%C2%AEstepsmall.jpg?auto=format,compress
-BodyCombat 2,BodyCombat,pablo.trainer@example.com,Intermedio,45,https://images.prismic.io/zumba/pGgkTzeVOQlQbs71_Zumba%C2%AEstepsmall.jpg?auto=format,compress
-BodyPump 1,BodyPump,pablo.trainer@example.com,Principiante,45,https://images.prismic.io/zumba/pGgkTzeVOQlQbs71_Zumba%C2%AEstepsmall.jpg?auto=format,compress
-BodyPump 2,BodyPump,sara.trainer@example.com,Intermedio,45,https://images.prismic.io/zumba/pGgkTzeVOQlQbs71_Zumba%C2%AEstepsmall.jpg?auto=format,compress
-Core 1,Core,sara.trainer@example.com,Principiante,45,https://images.prismic.io/zumba/pGgkTzeVOQlQbs71_Zumba%C2%AEstepsmall.jpg?auto=format,compress
-Core 2,Core,laura.trainer@example.com,Intermedio,45,https://images.prismic.io/zumba/pGgkTzeVOQlQbs71_Zumba%C2%AEstepsmall.jpg?auto=format,compress
-Stretch 1,Stretch,laura.trainer@example.com,Principiante,45,https://images.prismic.io/zumba/pGgkTzeVOQlQbs71_Zumba%C2%AEstepsmall.jpg?auto=format,compress
-Stretch 2,Stretch,pablo.trainer@example.com,Intermedio,45,https://images.prismic.io/zumba/pGgkTzeVOQlQbs71_Zumba%C2%AEstepsmall.jpg?auto=format,compress
-HIIT 1,HIIT,pablo.trainer@example.com,Principiante,45,https://images.prismic.io/zumba/pGgkTzeVOQlQbs71_Zumba%C2%AEstepsmall.jpg?auto=format,compress
-HIIT 2,HIIT,sara.trainer@example.com,Intermedio,45,https://images.prismic.io/zumba/pGgkTzeVOQlQbs71_Zumba%C2%AEstepsmall.jpg?auto=format,compress
+BodyCombat 1,BodyCombat,laura.trainer@example.com,Principiante,45,https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6-XKcRqwqtg03P-KXfCEVYuPop8bNKUMnm_rfg_zdr56wmHaO6Ecj4Cuz&s=10
+BodyCombat 2,BodyCombat,pablo.trainer@example.com,Intermedio,45,https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6-XKcRqwqtg03P-KXfCEVYuPop8bNKUMnm_rfg_zdr56wmHaO6Ecj4Cuz&s=10
+BodyPump 1,BodyPump,pablo.trainer@example.com,Principiante,45,https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkvPsoLIS9rsfjF2EwwpFAN-V1-IAs-Csu0I-kMcPwJttC_C-ywGBqm1U&s=10
+BodyPump 2,BodyPump,sara.trainer@example.com,Intermedio,45,https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkvPsoLIS9rsfjF2EwwpFAN-V1-IAs-Csu0I-kMcPwJttC_C-ywGBqm1U&s=10
+Core 1,Core,sara.trainer@example.com,Principiante,45,https://cdn.shopify.com/s/files/1/0649/0800/1452/files/sticker-core-redwhite_1920x1920_e3416ec4-c655-4cc1-9d50-84ee0ada4e4f.jpg?v=1732062044
+Core 2,Core,laura.trainer@example.com,Intermedio,45,https://cdn.shopify.com/s/files/1/0649/0800/1452/files/sticker-core-redwhite_1920x1920_e3416ec4-c655-4cc1-9d50-84ee0ada4e4f.jpg?v=1732062044
+Stretch 1,Stretch,laura.trainer@example.com,Principiante,45,https://www.shutterstock.com/shutterstock/photos/1551009884/display_1500/stock-vector-professional-vector-stretching-exercises-icon-stretching-exercises-symbol-that-can-be-used-for-any-1551009884.jpg
+Stretch 2,Stretch,pablo.trainer@example.com,Intermedio,45,https://www.shutterstock.com/shutterstock/photos/1551009884/display_1500/stock-vector-professional-vector-stretching-exercises-icon-stretching-exercises-symbol-that-can-be-used-for-any-1551009884.jpg
+HIIT 1,HIIT,pablo.trainer@example.com,Principiante,45,https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQS2Pk5hww2ZOWmI67MD4CUfM5imwyX_cvnnRLfCy0BaA&s=10
+HIIT 2,HIIT,sara.trainer@example.com,Intermedio,45,https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQS2Pk5hww2ZOWmI67MD4CUfM5imwyX_cvnnRLfCy0BaA&s=10
