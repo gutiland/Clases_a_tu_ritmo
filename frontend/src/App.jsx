@@ -12,20 +12,22 @@ import AdminPanel from './pages/AdminPanel/AdminPanel'
 
 function App() {
   return (
-    <>
+    <div className="app-shell">
       <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/catalog" element={<Catalog />} />
-        <Route path="/classes/create" element={<CreateClass />} />
-        <Route path="/classes/:id" element={<ClassDetails />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/my-workouts" element={<MyWorkouts />} />
-        <Route path="/admin" element={<AdminPanel />} />
-      </Routes>
+      <main className="app-main">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/catalog" element={<Catalog />} />
+          <Route path="/classes/create" element={<CreateClass />} />
+          <Route path="/classes/:id" element={<ClassDetails />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/my-workouts" element={<MyWorkouts />} />
+          <Route path="/admin" element={<AdminPanel />} />
+        </Routes>
+      </main>
       <Footer />
-    </>
+    </div>
   )
 }
 
